@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        #area {
+            background-color:#0b0b5b;
+            color: #f2f2f2;
+            font: bold 25px Arial;
+            text-align: center;
+            line-height: 200px;
+            height: 200px;
+            width: 400px
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Aqui é possível trabalhar os Eventos DOM, direto no HTML com os parâmetros dentro dos elementos. -->
+    <!-- O problema é que assim o código fica um tanto quanto "poluído". -->
+    <div id="area">
+        Esperando...
+    </div>
+
+    <script>
+        let a = document.getElementById('area')
+
+        // Está forma de adicionar eventos se torna mais interresante por deixar todos os Eventos DOM "na mão" do JavaScript.
+        a.addEventListener('click', clicar) 
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        function clicar() {
+            a.innerText = 'Clicou!'
+            a.style.backgroundColor = '#109519'
+        }
+
+        function entrar() {
+            a.innerText = 'Entrou!'
+        }
+
+        function sair() {
+            a.innerText = 'Saiu!'
+            a.style.backgroundColor = '#0b0b5b'
+        }
+
+    </script>
+</body>
+</html>

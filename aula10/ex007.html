@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Valores</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(127, 255, 212);
+            
+        }
+
+        .content {
+            background-color: rgb(0, 115, 255);
+            padding: 10px;
+            margin: auto;
+            border-radius: 10px 20px;
+            width: 500px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.506);
+            color: white;
+            border: 1px solid rgb(72, 72, 72);
+        }
+
+        .campos {
+            font-weight: bold;
+            color: white;
+            background-color: transparent;
+            border: 1px solid white;
+            
+            border-radius: 5px;
+            padding: 8px;
+        }
+
+    
+
+        .soma {
+            font-weight: bold;
+            color: white;
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: 8px;
+            padding: 8px;
+            cursor: pointer;
+            transition: .6s;
+        }
+
+        .soma:hover {
+            background-color: rgba(0, 0, 0, 0.611);
+        }
+
+        #res {
+            margin-top: 20px;
+            color: white;
+            font: normal 20px Arial;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.529)
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Somando Valores</h1>
+        <input type="number" name="txtn1" id="txtn1" class="campos"> +
+        <input type="number" name="txtn2" id="txtn2" class="campos">
+        <input type="button" value="Somar" onclick="somar()" class="soma">
+        <div id="res">
+            Resultado
+        </div>
+
+        <script>
+            function somar() {
+                let tn1 = document.getElementById('txtn1')
+                let tn2 = document.getElementById('txtn2')
+                let res = document.getElementById('res')
+                let n1 = Number(tn1.value)
+                let n2 = Number(tn2.value)
+                let s = n1 + n2
+                res.innerHTML = `A soma entre ${n1} e ${n2}, é igual à <strong>${s}</strong>`
+            }
+        </script>
+    </div>
+</body>
+</html>
